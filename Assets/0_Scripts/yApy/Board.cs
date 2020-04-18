@@ -27,6 +27,8 @@ public class Board : MonoBehaviour
     {
         Vector3 origin = transform.position;
 
+        _tiles = new Tile[col, row];
+
         for (int y = 0; y < row; y++)
         {
             for (int x = 0; x < col; x++)
@@ -35,6 +37,7 @@ public class Board : MonoBehaviour
                 var tile = Instantiate(_tilePrefab, position, transform.rotation);
                 tile.transform.parent = transform;
 
+                _tiles[x, y] = tile;
                 tile.Initialize(this, x, y);
 
                 var prefab = Random.value > 0.2 ? groundPrefab : wallPrefab;
