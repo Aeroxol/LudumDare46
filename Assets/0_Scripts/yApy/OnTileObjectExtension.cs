@@ -4,7 +4,7 @@ using UnityEngine;
 
 public static class OnTileObjectExtension
 {
-    public static void Move(this OnTileObject onTileObject, Tile newTile, bool adjustPosition)
+    public static void Move(this OnTileObject onTileObject, Tile newTile, bool adjustPosition = true)
     {
         if (onTileObject == null) return;
         if (onTileObject.Tile == null) return;
